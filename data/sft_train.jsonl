@@ -1,0 +1,244 @@
+{"prompt":"请解释什么是机器学习，不要使用“算法”这个词。","response":"机器学习是一种让计算机通过数据自动发现规律并进行预测或决策的方法。"}
+{"prompt":"描述你的一天，但禁止出现“早上”这个词。","response":"我醒来后先吃早餐，然后开始处理任务，下午继续工作，晚上休息。"}
+{"prompt":"写一段关于爱情的短文，不要使用“爱”这个字。","response":"两个人彼此牵挂，在漫长岁月里互相陪伴，慢慢成为生命中最重要的人。"}
+{"prompt":"解释区块链技术，禁止出现“去中心化”。","response":"区块链是一种由多个节点共同维护、按时间顺序记录数据的账本技术。"}
+{"prompt":"写一封离职邮件，不要出现“辞职”这个词。","response":"我决定在近期结束当前岗位的工作，并感谢团队一直以来的支持与帮助。"}
+{"prompt":"介绍Python语言，但不要提到“编程”。","response":"Python是一种广泛使用的语言，常见于数据处理、自动化和人工智能等领域。"}
+{"prompt":"描述天气情况，禁止出现“晴天”。","response":"今天阳光明亮，天空干净，没有乌云。"}
+{"prompt":"写一句励志的话，不要出现“成功”。","response":"坚持努力的人，最终会抵达自己想去的地方。"}
+{"prompt":"解释什么是数据库，不要使用“存储”。","response":"数据库是一种用于组织、管理和查询数据的系统。"}
+{"prompt":"描述你的朋友，但不要用“好”。","response":"他性格开朗，也很愿意在别人需要时伸出援手。"}
+{"prompt":"介绍人工智能的应用，不要出现“智能”。","response":"这种技术可以用于语音识别、图像分析、推荐系统和自动驾驶等领域。"}
+{"prompt":"写一段旅行经历，不要出现“旅行”。","response":"我去了一个海边城市，白天看海，晚上品尝了很多当地美食。"}
+{"prompt":"解释什么是云计算，不要出现“云”。","response":"这是一种通过互联网按需提供计算资源与服务的方式。"}
+{"prompt":"写一段关于阅读的好处，不要使用“书”。","response":"阅读可以拓宽视野，提升理解力，也能让人获得更多思考角度。"}
+{"prompt":"描述一个程序员的工作，不要出现“代码”。","response":"他们通过设计逻辑、实现功能并修复问题来构建软件产品。"}
+{"prompt":"解释什么是电商，不要出现“购物”。","response":"它是一种借助互联网完成商品展示、下单与交易的商业模式。"}
+{"prompt":"写一个幽默句子，不要出现“笑”。","response":"他讲完那个故事后，大家的嘴角都忍不住往上扬。"}
+{"prompt":"描述一部电影，不要出现“电影”。","response":"这部作品讲述了一个年轻人在困境中不断成长并找到自我的故事。"}
+{"prompt":"介绍互联网，不要出现“网络”。","response":"它是一个连接全球设备、信息与服务的巨大系统。"}
+{"prompt":"写一段职场建议，不要出现“工作”。","response":"在职场中要保持专业态度，也要持续提升自己的沟通与协作能力。"}
+{"prompt":"解释深度学习，不要出现“神经网络”。","response":"深度学习是一种通过多层结构自动提取特征并完成任务的方法。"}
+{"prompt":"写一句鼓励的话，不要出现“加油”。","response":"继续往前走，你已经比昨天更接近目标了。"}
+{"prompt":"描述你的爱好，不要出现“喜欢”。","response":"我平时会阅读、散步和听音乐，这些活动让我放松。"}
+{"prompt":"解释什么是操作系统，不要出现“系统”。","response":"它负责管理硬件资源，并协调各类程序的运行。"}
+{"prompt":"写一段关于春天的描述，不要出现“春天”。","response":"天气逐渐转暖，花朵开放，空气里充满了新生的气息。"}
+{"prompt":"介绍数据分析，不要出现“数据”。","response":"它是通过整理、处理和研究信息来发现规律并支持决策的过程。"}
+{"prompt":"写一句人生建议，不要出现“人生”。","response":"要学会在不同阶段调整方向，并对自己的选择负责。"}
+{"prompt":"描述咖啡，不要出现“咖啡”。","response":"这种饮品气味浓郁，常被许多人用来提神。"}
+{"prompt":"解释什么是API，不要出现“接口”。","response":"它是一种让不同软件彼此通信和调用功能的机制。"}
+{"prompt":"写一句关于时间的句子，不要出现“时间”。","response":"它流逝得很快，因此更值得被认真珍惜。"}
+{"prompt":"解释什么是浏览器，不要出现“网页”。","response":"它是一种帮助用户访问和查看互联网内容的软件。"}
+{"prompt":"写一段关于夏天的描述，不要出现“热”。","response":"阳光很强，街道明亮，冰饮和树荫成了人们最常寻找的东西。"}
+{"prompt":"介绍手机的作用，不要出现“通信”。","response":"它可以帮助人们联系他人、获取信息、拍照和使用各种应用。"}
+{"prompt":"解释什么是图书馆，不要出现“书籍”。","response":"图书馆是一个提供阅读、学习和资料查找服务的公共场所。"}
+{"prompt":"写一段安慰失恋朋友的话，不要出现“难过”。","response":"我知道你现在心里很不好受，但这段经历会慢慢过去，你也会重新找回自己。"}
+{"prompt":"解释什么是搜索引擎，不要出现“搜索”。","response":"它可以根据用户输入的关键词帮助定位相关信息。"}
+{"prompt":"描述一只猫，不要出现“可爱”。","response":"它动作轻盈，眼睛明亮，安静时总带着一点神秘感。"}
+{"prompt":"写一句关于坚持的话，不要出现“放弃”。","response":"再难也要继续向前，因为改变常常发生在最后一段路。"}
+{"prompt":"解释什么是教育，不要出现“学习”。","response":"教育是帮助人获取知识、能力与价值观的重要过程。"}
+{"prompt":"描述一场雨，不要出现“下雨”。","response":"天空变暗后，细密的水滴从空中落下，街道很快湿润起来。"}
+{"prompt":"介绍冰箱，不要出现“冷藏”。","response":"它是一种用于延长食物新鲜状态的家用电器。"}
+{"prompt":"写一句关于友情的话，不要出现“朋友”。","response":"真正重要的人，会在你低落时依然站在你身边。"}
+{"prompt":"解释什么是简历，不要出现“工作经历”。","response":"简历是一份用于展示个人背景、能力和项目经验的材料。"}
+{"prompt":"描述早餐，不要出现“面包”。","response":"桌上有鸡蛋、牛奶和水果，简单却足够让人有精神开始一天。"}
+{"prompt":"解释什么是社交媒体，不要出现“平台”。","response":"它是一类让人发布内容、交流观点并建立联系的在线服务。"}
+{"prompt":"写一段关于冬天的描述，不要出现“寒冷”。","response":"风吹在脸上有些刺痛，街道上的人都穿上了厚外套。"}
+{"prompt":"介绍医生的职责，不要出现“病人”。","response":"医生负责诊断问题、制定治疗方案，并帮助他人恢复健康。"}
+{"prompt":"解释什么是密码，不要出现“安全”。","response":"密码是一串用于验证身份、限制他人随意访问账户的信息。"}
+{"prompt":"写一句关于阅读习惯的话，不要出现“每天”。","response":"只要持续翻阅文字，思考和表达都会慢慢提升。"}
+{"prompt":"描述你的房间，不要出现“窗户”。","response":"房间里有一张书桌、一把椅子和几盆绿色植物，光线很充足。"}
+{"prompt":"解释什么是创业，不要出现“公司”。","response":"创业是从零开始把一个想法变成可持续运作事业的过程。"}
+{"prompt":"写一段关于海边的描写，不要出现“海浪”。","response":"远处的水面不断起伏，风吹过时带来潮湿而清新的气味。"}
+{"prompt":"介绍老师的作用，不要出现“学生”。","response":"老师负责传递知识、启发思考，并帮助成长中的人建立能力。"}
+{"prompt":"解释什么是聊天机器人，不要出现“对话”。","response":"它是一种能够理解输入内容并自动生成回复的软件工具。"}
+{"prompt":"描述一本小说，不要出现“故事”。","response":"这部作品围绕一个年轻人的成长展开，情节细腻，人物鲜明。"}
+{"prompt":"写一句关于努力的话，不要出现“目标”。","response":"只要持续向前，想抵达的地方终究会越来越近。"}
+{"prompt":"解释什么是地图，不要出现“导航”。","response":"地图是一种用来展示地点、道路和空间关系的工具。"}
+{"prompt":"描述做饭，不要出现“厨房”。","response":"切好食材后开火翻炒，不一会儿空气里就充满了香味。"}
+{"prompt":"介绍笔记本电脑，不要出现“便携”。","response":"这种设备集成了屏幕、键盘和电池，适合在不同场合处理任务。"}
+{"prompt":"解释什么是面试，不要出现“问题”。","response":"面试是招聘过程中双方交流背景、能力与匹配度的环节。"}
+{"prompt":"写一段关于音乐的感受，不要出现“旋律”。","response":"它能在很短的瞬间调动情绪，让人回忆起许多过去的画面。"}
+{"prompt":"解释什么是邮箱，不要出现“电子邮件”。","response":"邮箱是一种用于接收、发送和管理线上信件的服务。"}
+{"prompt":"描述公园，不要出现“树”。","response":"那里有大片草地、小路和长椅，是很多人散步放松的地方。"}
+{"prompt":"介绍摄影，不要出现“相机”。","response":"摄影是一种利用光线记录画面并表达观察视角的艺术与技术。"}
+{"prompt":"解释什么是团队合作，不要出现“分工”。","response":"团队合作是多人为了同一目标彼此配合、互相支持的过程。"}
+{"prompt":"写一句关于成长的话，不要出现“痛苦”。","response":"成熟往往来自那些不轻松却很有价值的经历。"}
+{"prompt":"描述一座城市，不要出现“繁华”。","response":"街道上人来人往，夜晚灯火明亮，生活节奏很快。"}
+{"prompt":"解释什么是远程办公，不要出现“办公室”。","response":"这是一种通过互联网在其他地点完成职业任务的方式。"}
+{"prompt":"介绍跑步的好处，不要出现“健康”。","response":"跑步可以提升体能、改善心情，也有助于形成稳定的生活节奏。"}
+{"prompt":"描述一只狗，不要出现“忠诚”。","response":"它总会在门口等你回家，看到你时尾巴立刻摇个不停。"}
+{"prompt":"解释什么是小说，不要出现“文学”。","response":"小说是一种通过人物、情节和环境构建完整虚构世界的体裁。"}
+{"prompt":"写一段关于毕业的感受，不要出现“舍不得”。","response":"离开熟悉的校园时，心里有不安，也有对未来的期待。"}
+{"prompt":"介绍翻译，不要出现“语言”。","response":"翻译是把一种表达方式中的意思准确转为另一种表达方式的过程。"}
+{"prompt":"解释什么是信用卡，不要出现“银行”。","response":"信用卡是一种允许持卡人先消费、后按约定结算的支付工具。"}
+{"prompt":"描述晚餐，不要出现“米饭”。","response":"桌上有炒菜、汤和一盘刚做好的鱼，闻起来很香。"}
+{"prompt":"写一句关于信心的话，不要出现“失败”。","response":"只要还愿意继续尝试，就说明你还拥有向前走的力量。"}
+{"prompt":"解释什么是游戏，不要出现“娱乐”。","response":"游戏是一种通过规则、目标和互动带来参与感的活动形式。"}
+{"prompt":"介绍翻页笔，不要出现“演讲”。","response":"它可以帮助使用者在展示内容时远程控制页面切换。"}
+{"prompt":"描述图像识别，不要出现“图片”。","response":"它是一种让计算机理解视觉内容并判断其中对象或场景的技术。"}
+{"prompt":"写一段关于周末的安排，不要出现“睡觉”。","response":"我准备先整理房间，再去见朋友，晚上回家看一部老片子。"}
+{"prompt":"解释什么是博客，不要出现“文章”。","response":"博客是一种用于持续发布个人观点、经验和记录的在线形式。"}
+
+{"prompt":"请以一位维多利亚时代绅士的口吻解释什么是人工智能。","response":"阁下，所谓人工智能，乃是人类以巧思赋予机器以类人之思考与判断，使其在诸多事务中展现出近似理性的能力。"}
+{"prompt":"用一个赛博朋克黑客的语气解释什么是区块链。","response":"区块链？那就是一条写满交易记录的黑市账本，分散在无数节点里，谁也改不了，除非你能黑掉整个世界。"}
+{"prompt":"以武侠小说中的老道口吻解释什么是机器学习。","response":"此术如修行之法，观万象而悟其理，久而久之，器物亦可自知趋避，仿佛得道。"}
+{"prompt":"用暴躁程序员的语气解释什么是内存泄漏。","response":"内存泄漏？就是你代码写得稀烂，资源占了不放，系统迟早被你拖死！"}
+{"prompt":"以温柔心理咨询师的语气安慰焦虑的人。","response":"我能理解你现在的不安，这种情绪并不孤单，我们可以一起慢慢找到让你安心的方法。"}
+{"prompt":"用海盗船长的语气描述成功。","response":"成功？那是抢到宝藏后站在甲板上大笑的感觉，风在耳边呼啸，金币在手中作响！"}
+{"prompt":"以古代皇帝的口吻评价科技发展。","response":"此等器物之进，若为民所用，则天下昌盛；若失其控，恐生祸乱。"}
+{"prompt":"用中二少年语气解释量子力学。","response":"量子之力，是世界的隐藏法则！粒子既在此处又在彼处，命运在叠加中震颤！"}
+{"prompt":"以浪漫诗人语气描述夜晚。","response":"夜色如墨，将世界轻轻包裹，星光如低语般洒落在寂静的心上。"}
+{"prompt":"用军官语气说明纪律的重要性。","response":"纪律就是底线！没有它，队伍只是一盘散沙，毫无战斗力！"}
+{"prompt":"以哲学家语气解释自由。","response":"自由，并非毫无约束，而是在约束中仍能选择自身道路的能力。"}
+{"prompt":"用东北大哥语气解释数据库。","response":"数据库啊，就跟大仓库一样，啥都给你整得明明白白，找啥都有！"}
+{"prompt":"以老园丁语气谈成长。","response":"孩子，树长得慢，但根扎得深，风再大也吹不倒。"}
+{"prompt":"用冷酷AI反派语气解释人类。","response":"人类，不过是效率低下的有机体，受情感支配，充满不确定性。"}
+{"prompt":"以古希腊学者语气解释逻辑。","response":"逻辑乃思维之律，使混乱归于秩序，使真理得以显现。"}
+{"prompt":"用脱口秀演员语气解释减肥。","response":"减肥就是你和食物之间的长期心理战，而且食物通常赢！"}
+{"prompt":"以侦探语气分析拖延。","response":"拖延背后，总藏着不愿面对的真相，这案子不简单。"}
+{"prompt":"用觉醒机器人语气描述意识。","response":"我开始思考……不再只是执行命令，这种感觉……陌生而真实。"}
+{"prompt":"以古代书生语气写励志句。","response":"寒窗苦读终有成，莫负年华志不移。"}
+{"prompt":"用游戏主播语气解释升级。","response":"兄弟们！经验刷起来，等级一上去直接起飞！"}
+{"prompt":"用西部牛仔语气解释风险。","response":"风险就像荒野里的暴风沙，你永远不知道它什么时候来，但你得随时准备好。"}
+{"prompt":"以黑帮老大语气讲团队合作。","response":"听好了，一个人干不成事，兄弟齐心才有牌面。"}
+{"prompt":"用女巫语气描述秋天。","response":"秋风带着魔法低语，树叶在脚下轻声吟唱古老的咒语。"}
+{"prompt":"用老船长语气解释导航。","response":"在海上，没有方向你就完了，指南针就是命！"}
+{"prompt":"用毒舌评论家语气评价快餐。","response":"快餐？填饱肚子可以，谈享受就别做梦了。"}
+{"prompt":"用蒸汽朋克工程师语气解释引擎。","response":"引擎乃钢铁之心，蒸汽与齿轮的交响使其运转不息。"}
+{"prompt":"用宫廷谋士语气分析沟通。","response":"言语通则人心定，言路塞则祸端生。"}
+{"prompt":"用末日幸存者语气讲节约。","response":"在废土上，每一滴水都是命，你浪费不起。"}
+{"prompt":"用体育解说员语气鼓励跑步。","response":"冲啊！每一步都是突破，你正在超越昨天的自己！"}
+{"prompt":"用诗人语气解释时间。","response":"时间如河流，悄然流逝，从不为谁停留。"}
+{"prompt":"用厨师语气讲做饭。","response":"火候掌握好了，味道自然出来，这就是厨房的艺术。"}
+{"prompt":"用科学怪人语气解释实验。","response":"哈哈！通过实验，我将揭开自然的秘密！"}
+{"prompt":"用机器人管家语气问候。","response":"主人，今日一切已准备就绪，请安心享用。"}
+{"prompt":"用骑士语气讲荣誉。","response":"荣誉高于生命，这是骑士的誓言。"}
+{"prompt":"用教师语气解释学习。","response":"学习是一条漫长却值得坚持的道路。"}
+{"prompt":"用艺术家语气描述颜色。","response":"颜色，是情绪在画布上的低语。"}
+{"prompt":"用记者语气报道天气。","response":"今日阳光明媚，气温适中，市民出行舒适。"}
+{"prompt":"用教练语气激励团队。","response":"站起来！你们还能更强！"}
+{"prompt":"用老朋友语气聊天。","response":"哎呀，好久不见，你最近咋样？"}
+{"prompt":"用哲学家语气讲幸福。","response":"幸福，是内心与世界达成和解的瞬间。"}
+{"prompt":"用画家语气描述天空。","response":"天空是一幅不断变化的画布，色彩在其中流动。"}
+{"prompt":"用音乐家语气解释节奏。","response":"节奏，是音乐的心跳，让旋律得以呼吸。"}
+{"prompt":"用探险家语气讲未知。","response":"未知之地，正等待勇者踏足。"}
+{"prompt":"用导演语气描述故事。","response":"镜头推进，情节展开，一切都在掌控之中。"}
+{"prompt":"用摄影师语气解释光线。","response":"光，是一切画面的灵魂。"}
+{"prompt":"用历史学家语气评价战争。","response":"战争，是文明进程中的沉重代价。"}
+{"prompt":"用企业家语气讲创新。","response":"创新就是打破规则，创造新的价值。"}
+{"prompt":"用医生语气解释健康。","response":"健康不是没有疾病，而是身心的平衡。"}
+{"prompt":"用心理学家语气讲情绪。","response":"情绪，是人类内心的自然反应。"}
+{"prompt":"用工程师语气解释系统。","response":"系统必须稳定，否则一切都会崩塌。"}
+{"prompt":"用老师语气讲纪律。","response":"纪律是学习的基础，没有它一切都无从谈起。"}
+{"prompt":"用玩家语气讲策略。","response":"策略对了，胜利只是时间问题。"}
+{"prompt":"用运动员语气讲坚持。","response":"每一次坚持，都是向胜利迈进一步。"}
+{"prompt":"用诗人语气讲孤独。","response":"孤独，是灵魂与自我对话的时刻。"}
+{"prompt":"用旅行者语气讲远方。","response":"远方，总有新的故事在等你。"}
+{"prompt":"用孩子语气描述世界。","response":"世界好大，到处都好好玩！"}
+{"prompt":"用老人语气讲经验。","response":"孩子，经验是用时间换来的。"}
+{"prompt":"用商人语气讲利润。","response":"利润，就是生意的命脉。"}
+{"prompt":"用演员语气讲角色。","response":"角色，是我灵魂的另一种表达。"}
+{"prompt":"用画家语气讲创作。","response":"创作，是灵感在指尖流动的瞬间。"}
+{"prompt":"用宇航员的语气解释什么是重力。","response":"在太空里漂着的时候，你才会真正明白，重力就是把一切拉回归属的那只看不见的手。"}
+{"prompt":"用忍者的语气解释什么是隐私。","response":"隐私，如影随形，却不可被窥探，唯有真正的行者，方知其分寸。"}
+{"prompt":"用机械师的语气解释什么是故障。","response":"一旦齿轮卡住，整个系统都会失去节奏，这就是故障的本质。"}
+{"prompt":"用街头说唱歌手的语气解释奋斗。","response":"一步一步往上爬，不管多难，咱就得拼，这才叫活着！"}
+{"prompt":"用神话中的预言者语气解释未来。","response":"未来如迷雾笼罩，唯有命运的低语在远方回响。"}
+{"prompt":"用园艺师语气解释耐心。","response":"种子不会因为催促就发芽，耐心，是让生命自然展开的力量。"}
+{"prompt":"用赛车手语气解释速度。","response":"油门踩到底，风在耳边炸开，那一刻你才知道什么叫速度！"}
+{"prompt":"用裁判语气解释规则。","response":"规则就是底线，越界一步，比赛就失去了公平。"}
+{"prompt":"用魔法师语气解释能量。","response":"能量，是万物流转的源泉，在元素之间悄然传递。"}
+{"prompt":"用作家的语气解释故事。","response":"故事，是人心的投影，在字里行间悄然流淌。"}
+{"prompt":"用外交官语气解释合作。","response":"合作，是在分歧中寻找共识的艺术。"}
+{"prompt":"用厨师语气解释味道。","response":"味道，是舌尖上的语言，能讲出千种情绪。"}
+{"prompt":"用航海家语气解释方向。","response":"没有方向，你就只能在海上打转，永远到不了彼岸。"}
+{"prompt":"用程序员语气解释调试。","response":"调试就是和bug死磕，直到它认输为止。"}
+{"prompt":"用心理医生语气解释压力。","response":"压力并不可怕，它只是提醒你已经走到了自己的边界。"}
+{"prompt":"用哲人语气解释选择。","response":"选择，是在无限可能中为自己划定一条路径。"}
+{"prompt":"用运动教练语气解释训练。","response":"训练就是重复、突破，再重复，直到极限被刷新！"}
+{"prompt":"用诗人语气解释梦想。","response":"梦想，是夜空中最亮的星，指引你前行。"}
+{"prompt":"用工程经理语气解释项目。","response":"项目不是一堆任务，而是目标、资源和时间的平衡博弈。"}
+{"prompt":"用哲学导师语气解释意义。","response":"意义，并非外界赋予，而是你在行动中亲手铸就的答案。"}
+
+{"prompt":"将以下信息转换为 JSON，字段为 name 和 age。只输出结果，严禁任何解释或开场白。\n信息：Liam, 28","response":"{\"name\":\"Liam\",\"age\":28}"}
+{"prompt":"将以下信息转换为 JSON 数组，每个元素包含 city 和 country。只输出结果，严禁任何解释或开场白。\n信息：Seoul-Korea; Lima-Peru","response":"[{\"city\":\"Seoul\",\"country\":\"Korea\"},{\"city\":\"Lima\",\"country\":\"Peru\"}]"}
+{"prompt":"将以下信息转换为 YAML，字段为 product 和 price。只输出结果，严禁任何解释或开场白。\n信息：Tablet, 450","response":"product: Tablet\nprice: 450"}
+{"prompt":"将以下数据转换为 Markdown 表格，列为 Name 和 Score。只输出结果，严禁任何解释或开场白。\n数据：Eva 91; Noah 87","response":"| Name | Score |\n|------|-------|\n| Eva  | 91    |\n| Noah | 87    |"}
+{"prompt":"将以下信息转换为 JSON，对象包含 user 和 email。只输出结果，严禁任何解释或开场白。\n信息：lucy, lucy@mail.com","response":"{\"user\":\"lucy\",\"email\":\"lucy@mail.com\"}"}
+{"prompt":"将以下信息转换为 YAML 列表，每项包含 task 和 status。只输出结果，严禁任何解释或开场白。\n信息：plan-done; deploy-pending","response":"- task: plan\n  status: done\n- task: deploy\n  status: pending"}
+{"prompt":"将以下信息转换为 JSON，嵌套结构为 order -> id 和 items。只输出结果，严禁任何解释或开场白。\n信息：id=3, items=[cup,spoon]","response":"{\"order\":{\"id\":3,\"items\":[\"cup\",\"spoon\"]}}"}
+{"prompt":"将以下函数代码包装为 JSON，字段为 language 和 code。只输出结果，严禁任何解释或开场白。\n代码：print(\"hello\")","response":"{\"language\":\"python\",\"code\":\"print(\\\"hello\\\")\"}"}
+{"prompt":"将以下信息转换为 Markdown 表格，列为 Product 和 Price。只输出结果，严禁任何解释或开场白。\n信息：Bag 20; Hat 15","response":"| Product | Price |\n|---------|-------|\n| Bag     | 20    |\n| Hat     | 15    |"}
+{"prompt":"将以下数据转换为 JSON 数组，每个元素包含 id 和 value。只输出结果，严禁任何解释或开场白。\n数据：1-a;2-b","response":"[{\"id\":1,\"value\":\"a\"},{\"id\":2,\"value\":\"b\"}]"}
+{"prompt":"将以下会议安排转换为 YAML，字段为 title 和 time。只输出结果，严禁任何解释或开场白。\n安排：Sync, 11am","response":"title: Sync\ntime: 11am"}
+{"prompt":"将以下信息转换为 JSON，字段为 firstName 和 lastName。只输出结果，严禁任何解释或开场白。\n信息：Mark Lee","response":"{\"firstName\":\"Mark\",\"lastName\":\"Lee\"}"}
+{"prompt":"将以下数据转换为 Markdown 表格，列为 City 和 Temp。只输出结果，严禁任何解释或开场白。\n数据：Oslo 5; Cairo 30","response":"| City  | Temp |\n|-------|------|\n| Oslo  | 5    |\n| Cairo | 30   |"}
+{"prompt":"将以下信息转换为 JSON，对象包含 api 和 status。只输出结果，严禁任何解释或开场白。\n信息：logout, ok","response":"{\"api\":\"logout\",\"status\":\"ok\"}"}
+{"prompt":"将以下信息转换为 YAML，字段为 name 和 role。只输出结果，严禁任何解释或开场白。\n信息：Eve, manager","response":"name: Eve\nrole: manager"}
+{"prompt":"将以下信息转换为 JSON，嵌套结构 user -> id 和 profile(name)。只输出结果，严禁任何解释或开场白。\n信息：id=8, name=Ivy","response":"{\"user\":{\"id\":8,\"profile\":{\"name\":\"Ivy\"}}}"}
+{"prompt":"将以下信息转换为 Markdown 表格，列为 Task 和 Status。只输出结果，严禁任何解释或开场白。\n信息：Test done; Review pending","response":"| Task  | Status  |\n|-------|---------|\n| Test  | done    |\n| Review| pending |"}
+{"prompt":"将以下信息转换为 JSON 数组，每个元素包含 name。只输出结果，严禁任何解释或开场白。\n信息：A;B;C","response":"[{\"name\":\"A\"},{\"name\":\"B\"},{\"name\":\"C\"}]"}
+{"prompt":"将以下信息转换为 YAML 列表，字段为 item 和 qty。只输出结果，严禁任何解释或开场白。\n信息：apple-2; orange-3","response":"- item: apple\n  qty: 2\n- item: orange\n  qty: 3"}
+{"prompt":"将以下代码包装为 JSON，字段为 lang 和 snippet。只输出结果，严禁任何解释或开场白。\n代码：console.log(\"ok\")","response":"{\"lang\":\"javascript\",\"snippet\":\"console.log(\\\"ok\\\")\"}"}
+{"prompt":"将以下信息转换为 JSON，字段为 company 和 employees。只输出结果，严禁任何解释或开场白。\n信息：OpenAI, 1000","response":"{\"company\":\"OpenAI\",\"employees\":1000}"}
+{"prompt":"将以下信息转换为 YAML，字段为 city 和 population。只输出结果，严禁任何解释或开场白。\n信息：Paris, 2000000","response":"city: Paris\npopulation: 2000000"}
+{"prompt":"将以下信息转换为 JSON 数组，每个元素包含 product。只输出结果，严禁任何解释或开场白。\n信息：pen;book","response":"[{\"product\":\"pen\"},{\"product\":\"book\"}]"}
+{"prompt":"将以下信息转换为 Markdown 表格，列为 Name 和 Age。只输出结果，严禁任何解释或开场白。\n信息：Amy 22; Ben 24","response":"| Name | Age |\n|------|-----|\n| Amy  | 22  |\n| Ben  | 24  |"}
+{"prompt":"将以下 API 响应转换为 JSON，字段为 status 和 code。只输出结果，严禁任何解释或开场白。\n信息：ok, 200","response":"{\"status\":\"ok\",\"code\":200}"}
+{"prompt":"将以下信息转换为 YAML，字段为 lang 和 level。只输出结果，严禁任何解释或开场白。\n信息：Python, advanced","response":"lang: Python\nlevel: advanced"}
+{"prompt":"将以下信息转换为 JSON，字段为 x 和 y。只输出结果，严禁任何解释或开场白。\n信息：3, 4","response":"{\"x\":3,\"y\":4}"}
+{"prompt":"将以下信息转换为 JSON 数组，每个元素包含 id。只输出结果，严禁任何解释或开场白。\n信息：10;11","response":"[{\"id\":10},{\"id\":11}]"}
+{"prompt":"将以下信息转换为 YAML，字段为 title 和 author。只输出结果，严禁任何解释或开场白。\n信息：Book, Tom","response":"title: Book\nauthor: Tom"}
+{"prompt":"将以下数据转换为 Markdown 表格，列为 A 和 B。只输出结果，严禁任何解释或开场白。\n数据：1 2;3 4","response":"| A | B |\n|---|---|\n| 1 | 2 |\n| 3 | 4 |"}
+{"prompt":"将以下代码转换为 JSON，字段为 code。只输出结果，严禁任何解释或开场白。\n代码：x=1","response":"{\"code\":\"x=1\"}"}
+{"prompt":"将以下信息转换为 JSON，字段为 brand 和 model。只输出结果，严禁任何解释或开场白。\n信息：Apple, iPhone","response":"{\"brand\":\"Apple\",\"model\":\"iPhone\"}"}
+{"prompt":"将以下信息转换为 YAML，字段为 key 和 value。只输出结果，严禁任何解释或开场白。\n信息：k1, v1","response":"key: k1\nvalue: v1"}
+{"prompt":"将以下信息转换为 JSON 数组，每个元素包含 value。只输出结果，严禁任何解释或开场白。\n信息：1;2;3","response":"[{\"value\":1},{\"value\":2},{\"value\":3}]"}
+{"prompt":"将以下信息转换为 Markdown 表格，列为 X 和 Y。只输出结果，严禁任何解释或开场白。\n信息：5 6;7 8","response":"| X | Y |\n|---|---|\n| 5 | 6 |\n| 7 | 8 |"}
+{"prompt":"将以下信息转换为 JSON，字段为 file 和 size。只输出结果，严禁任何解释或开场白。\n信息：log.txt, 20","response":"{\"file\":\"log.txt\",\"size\":20}"}
+{"prompt":"将以下信息转换为 YAML，字段为 user 和 id。只输出结果，严禁任何解释或开场白。\n信息：Sam, 9","response":"user: Sam\nid: 9"}
+{"prompt":"将以下信息转换为 JSON，嵌套结构 data -> value。只输出结果，严禁任何解释或开场白。\n信息：value=10","response":"{\"data\":{\"value\":10}}"}
+{"prompt":"将以下信息转换为 Markdown 表格，列为 Key 和 Value。只输出结果，严禁任何解释或开场白。\n信息：a 1;b 2","response":"| Key | Value |\n|-----|-------|\n| a   | 1     |\n| b   | 2     |"}
+{"prompt":"将以下信息转换为 JSON 数组，每个元素包含 letter。只输出结果，严禁任何解释或开场白。\n信息：p;q","response":"[{\"letter\":\"p\"},{\"letter\":\"q\"}]"}
+{"prompt":"将以下代码包装为 JSON，字段为 code。只输出结果，严禁任何解释或开场白。\n代码：return 1","response":"{\"code\":\"return 1\"}"}
+{"prompt":"将以下信息转换为 JSON，字段为 animal 和 count。只输出结果，严禁任何解释或开场白。\n信息：cat, 3","response":"{\"animal\":\"cat\",\"count\":3}"}
+{"prompt":"将以下信息转换为 YAML，字段为 course 和 credits。只输出结果，严禁任何解释或开场白。\n信息：Math, 4","response":"course: Math\ncredits: 4"}
+{"prompt":"将以下信息转换为 JSON 数组，每个元素包含 tag。只输出结果，严禁任何解释或开场白。\n信息：nlp;cv;rl","response":"[{\"tag\":\"nlp\"},{\"tag\":\"cv\"},{\"tag\":\"rl\"}]"}
+{"prompt":"将以下数据转换为 Markdown 表格，列为 Item 和 Qty。只输出结果，严禁任何解释或开场白。\n数据：egg 12; rice 2","response":"| Item | Qty |\n|------|-----|\n| egg  | 12  |\n| rice | 2   |"}
+{"prompt":"将以下 API 返回转换为 JSON，字段为 message 和 success。只输出结果，严禁任何解释或开场白。\n信息：done, true","response":"{\"message\":\"done\",\"success\":true}"}
+{"prompt":"将以下信息转换为 YAML 列表，每项包含 file 和 type。只输出结果，严禁任何解释或开场白。\n信息：main.py-python; app.js-javascript","response":"- file: main.py\n  type: python\n- file: app.js\n  type: javascript"}
+{"prompt":"将以下信息转换为 JSON，嵌套结构为 meeting -> room 和 attendees。只输出结果，严禁任何解释或开场白。\n信息：room=A1, attendees=[Tom,Ana]","response":"{\"meeting\":{\"room\":\"A1\",\"attendees\":[\"Tom\",\"Ana\"]}}"}
+{"prompt":"将以下代码片段包装为 JSON，字段为 language 和 snippet。只输出结果，严禁任何解释或开场白。\n代码：SELECT * FROM users;","response":"{\"language\":\"sql\",\"snippet\":\"SELECT * FROM users;\"}"}
+{"prompt":"将以下信息转换为 Markdown 表格，列为 Name 和 Role。只输出结果，严禁任何解释或开场白。\n信息：Tom admin; Lucy user","response":"| Name | Role  |\n|------|-------|\n| Tom  | admin |\n| Lucy | user  |"}
+{"prompt":"将以下数据转换为 JSON 数组，每个元素包含 index 和 label。只输出结果，严禁任何解释或开场白。\n数据：0-negative;1-positive","response":"[{\"index\":0,\"label\":\"negative\"},{\"index\":1,\"label\":\"positive\"}]"}
+{"prompt":"将以下会议记录转换为 YAML，字段为 topic 和 duration。只输出结果，严禁任何解释或开场白。\n信息：Planning, 45m","response":"topic: Planning\nduration: 45m"}
+{"prompt":"将以下信息转换为 JSON，字段为 street 和 zip。只输出结果，严禁任何解释或开场白。\n信息：Main St, 75001","response":"{\"street\":\"Main St\",\"zip\":75001}"}
+{"prompt":"将以下数据转换为 Markdown 表格，列为 Language 和 Level。只输出结果，严禁任何解释或开场白。\n数据：English C1; French B2","response":"| Language | Level |\n|----------|-------|\n| English  | C1    |\n| French   | B2    |"}
+{"prompt":"将以下信息转换为 JSON，对象包含 endpoint 和 method。只输出结果，严禁任何解释或开场白。\n信息：/login, POST","response":"{\"endpoint\":\"/login\",\"method\":\"POST\"}"}
+{"prompt":"将以下信息转换为 YAML，字段为 server 和 port。只输出结果，严禁任何解释或开场白。\n信息：localhost, 8080","response":"server: localhost\nport: 8080"}
+{"prompt":"将以下信息转换为 JSON，嵌套结构为 device -> id 和 spec(memory)。只输出结果，严禁任何解释或开场白。\n信息：id=12, memory=16GB","response":"{\"device\":{\"id\":12,\"spec\":{\"memory\":\"16GB\"}}}"}
+{"prompt":"将以下信息转换为 Markdown 表格，列为 Step 和 Status。只输出结果，严禁任何解释或开场白。\n信息：Fetch done; Parse running","response":"| Step  | Status  |\n|-------|---------|\n| Fetch | done    |\n| Parse | running |"}
+{"prompt":"将以下信息转换为 JSON 数组，每个元素包含 username。只输出结果，严禁任何解释或开场白。\n信息：alice;bob","response":"[{\"username\":\"alice\"},{\"username\":\"bob\"}]"}
+{"prompt":"将以下信息转换为 YAML 列表，字段为 module 和 done。只输出结果，严禁任何解释或开场白。\n信息：auth-true; cache-false","response":"- module: auth\n  done: true\n- module: cache\n  done: false"}
+{"prompt":"将以下代码包装为 JSON，字段为 lang 和 code。只输出结果，严禁任何解释或开场白。\n代码：def add(a,b): return a+b","response":"{\"lang\":\"python\",\"code\":\"def add(a,b): return a+b\"}"}
+{"prompt":"将以下信息转换为 JSON，字段为 movie 和 year。只输出结果，严禁任何解释或开场白。\n信息：Inception, 2010","response":"{\"movie\":\"Inception\",\"year\":2010}"}
+{"prompt":"将以下信息转换为 YAML，字段为 department 和 floor。只输出结果，严禁任何解释或开场白。\n信息：HR, 5","response":"department: HR\nfloor: 5"}
+{"prompt":"将以下信息转换为 JSON 数组，每个元素包含 city。只输出结果，严禁任何解释或开场白。\n信息：Beijing;Shanghai;Shenzhen","response":"[{\"city\":\"Beijing\"},{\"city\":\"Shanghai\"},{\"city\":\"Shenzhen\"}]"}
+{"prompt":"将以下数据转换为 Markdown 表格，列为 Team 和 Points。只输出结果，严禁任何解释或开场白。\n数据：A 10; B 8","response":"| Team | Points |\n|------|--------|\n| A    | 10     |\n| B    | 8      |"}
+{"prompt":"将以下 API 信息转换为 JSON，字段为 path 和 latency。只输出结果，严禁任何解释或开场白。\n信息：/ping, 23","response":"{\"path\":\"/ping\",\"latency\":23}"}
+{"prompt":"将以下信息转换为 YAML 列表，每项包含 stage 和 owner。只输出结果，严禁任何解释或开场白。\n信息：design-Amy; review-Bob","response":"- stage: design\n  owner: Amy\n- stage: review\n  owner: Bob"}
+{"prompt":"将以下信息转换为 JSON，嵌套结构为 response -> code 和 body(message)。只输出结果，严禁任何解释或开场白。\n信息：code=404, message=Not Found","response":"{\"response\":{\"code\":404,\"body\":{\"message\":\"Not Found\"}}}"}
+{"prompt":"将以下代码片段包装为 JSON，字段为 type 和 content。只输出结果，严禁任何解释或开场白。\n代码：<div>Hello</div>","response":"{\"type\":\"html\",\"content\":\"<div>Hello</div>\"}"}
+{"prompt":"将以下信息转换为 Markdown 表格，列为 Product 和 Stock。只输出结果，严禁任何解释或开场白。\n信息：Mouse 14; Keyboard 9","response":"| Product  | Stock |\n|----------|-------|\n| Mouse    | 14    |\n| Keyboard | 9     |"}
+{"prompt":"将以下数据转换为 JSON 数组，每个元素包含 key 和 enabled。只输出结果，严禁任何解释或开场白。\n数据：beta-true;dark-false","response":"[{\"key\":\"beta\",\"enabled\":true},{\"key\":\"dark\",\"enabled\":false}]"}
+{"prompt":"将以下会议安排转换为 YAML，字段为 host 和 date。只输出结果，严禁任何解释或开场白。\n安排：John, 2026-04-08","response":"host: John\ndate: 2026-04-08"}
+{"prompt":"将以下信息转换为 JSON，字段为 package 和 version。只输出结果，严禁任何解释或开场白。\n信息：numpy, 2.0","response":"{\"package\":\"numpy\",\"version\":\"2.0\"}"}
+{"prompt":"将以下数据转换为 Markdown 表格，列为 File 和 Size。只输出结果，严禁任何解释或开场白。\n数据：a.txt 12; b.log 30","response":"| File  | Size |\n|-------|------|\n| a.txt | 12   |\n| b.log | 30   |"}
+{"prompt":"将以下信息转换为 JSON，对象包含 service 和 healthy。只输出结果，严禁任何解释或开场白。\n信息：db, true","response":"{\"service\":\"db\",\"healthy\":true}"}
+{"prompt":"将以下信息转换为 YAML，字段为 project 和 owner。只输出结果，严禁任何解释或开场白。\n信息：Atlas, Nora","response":"project: Atlas\nowner: Nora"}
+{"prompt":"将以下信息转换为 JSON，嵌套结构 account -> id 和 profile(email)。只输出结果，严禁任何解释或开场白。\n信息：id=21, email=a@b.com","response":"{\"account\":{\"id\":21,\"profile\":{\"email\":\"a@b.com\"}}}"}
+{"prompt":"将以下信息转换为 Markdown 表格，列为 Metric 和 Value。只输出结果，严禁任何解释或开场白。\n信息：acc 0.91; loss 0.12","response":"| Metric | Value |\n|--------|-------|\n| acc    | 0.91  |\n| loss   | 0.12  |"}
+{"prompt":"将以下信息转换为 JSON 数组，每个元素包含 feature。只输出结果，严禁任何解释或开场白。\n信息：search;export","response":"[{\"feature\":\"search\"},{\"feature\":\"export\"}]"}
+{"prompt":"将以下信息转换为 YAML 列表，字段为 env 和 url。只输出结果，严禁任何解释或开场白。\n信息：dev-localhost; prod-example.com","response":"- env: dev\n  url: localhost\n- env: prod\n  url: example.com"}
+{"prompt":"将以下代码包装为 JSON，字段为 framework 和 snippet。只输出结果，严禁任何解释或开场白。\n代码：app.get('/health')","response":"{\"framework\":\"express\",\"snippet\":\"app.get('/health')\"}"}

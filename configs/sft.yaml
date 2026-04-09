@@ -1,0 +1,64 @@
+experiment:
+  name: sft_qwen2_5_1_5b_lora
+  stage: sft
+
+model:
+  base_model_name_or_path: Qwen/Qwen2.5-1.5B
+  torch_dtype: bfloat16
+  device_map: auto
+
+tokenizer:
+  source: Qwen/Qwen2.5-1.5B
+  use_fast: true
+
+data:
+  train_file: data/sft_train.jsonl
+  eval_file: data/sft_eval.jsonl
+  dataset_dir: data/sft_dataset
+  categories:
+    - instruction_constraints
+    - style_differences
+    - format_requirements
+  split_sizes:
+    train_per_category: 80
+    eval_per_category: 10
+    total_train: 240
+    total_eval: 30
+
+peft:
+  method: lora
+  r: 16
+  lora_alpha: 32
+  lora_dropout: 0.2
+  bias: none
+  task_type: CAUSAL_LM
+  target_modules:
+    - q_proj
+    - k_proj
+    - v_proj
+    - o_proj
+    - gate_proj
+    - up_proj
+    - down_proj
+
+training:
+  output_dir: outputs/sft
+  per_device_train_batch_size: 2
+  gradient_accumulation_steps: 4
+  num_train_epochs: 10
+  optim: adamw_torch
+  learning_rate: 2.0e-5
+  weight_decay: 0.05
+  lr_scheduler_type: cosine
+  warmup_steps: 30
+  packing: false
+  eval_strategy: epoch
+  logging_strategy: steps
+  logging_steps: 1
+  report_to:
+    - tensorboard
+
+notes:
+  - Synthetic SFT data is generated with GPT.
+  - This stage adapts the base model for simple instruction-following behavior.
+  - The resulting SFT checkpoint is used as the starting point for DPO.

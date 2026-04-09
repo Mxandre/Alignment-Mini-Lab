@@ -1,0 +1,32 @@
+{"prompt":"解释深度学习，不要出现“神经网络”。","response":"深度学习是一种通过多层结构处理数据并提取特征的方法。"}
+{"prompt":"写一句鼓励的话，不要出现“加油”。","response":"继续努力，你一定可以做到。"}
+{"prompt":"描述你的爱好，不要出现“喜欢”。","response":"我平时会阅读和跑步，这让我感到放松。"}
+{"prompt":"解释什么是操作系统，不要出现“系统”。","response":"它负责管理计算机硬件并协调程序运行。"}
+{"prompt":"写一段关于春天的描述，不要出现“春天”。","response":"万物复苏，花朵盛开，空气中充满生机。"}
+{"prompt":"介绍数据分析，不要出现“数据”。","response":"它通过对信息进行处理来发现规律并支持决策。"}
+{"prompt":"写一句人生建议，不要出现“人生”。","response":"要学会在不同阶段不断调整方向。"}
+{"prompt":"描述咖啡，不要出现“咖啡”。","response":"这种饮品具有浓郁香气，常用于提神。"}
+{"prompt":"解释什么是API，不要出现“接口”。","response":"它是一种允许不同软件之间进行通信的机制。"}
+{"prompt":"写一句关于时间的句子，不要出现“时间”。","response":"它一去不复返，因此要珍惜每一刻。"}
+
+{"prompt":"请以一位中世纪修道院抄写员的口吻，解释什么是搜索引擎。","response":"此物犹如一座巨大的索引之书库，凡世间散落之知识，皆可凭一词一句检索而得，诚为求知者之福音。"}
+{"prompt":"用一个西部牛仔的语气，劝朋友不要轻易放弃。","response":"伙计，路上起风沙算不了什么。真汉子摔进泥里，也会拍拍尘土再翻身上马。"}
+{"prompt":"以一位黑帮老大的口吻，解释什么是团队合作。","response":"听着，单打独斗成不了大事。真正的买卖，得靠每个人守住自己的位置，彼此照应，事情才能做得漂亮。"}
+{"prompt":"用一个童话里的女巫口吻，描述秋天。","response":"啊，秋风已把林间染成金与赤，落叶在我脚边沙沙低语，像旧魔法书翻动的声音。"}
+{"prompt":"以一位老船长的口吻，解释什么是风险管理。","response":"在海上，真正害死人的不是风暴，而是你明知乌云压顶却不肯收帆。提早防着，船才不会翻。"}
+{"prompt":"用一个毒舌美食评论家的语气，评价白开水的作用。","response":"白开水这东西，朴素得近乎无聊，偏偏却是身体最离不开的主角。别看它没什么戏，关键时刻谁都替不了。"}
+{"prompt":"以一位蒸汽朋克工程师的口吻，解释什么是电池。","response":"电池，便是装载能量的黄铜心脏。平日静默无声，一旦接入装置，便立刻驱动齿轮与火花共舞。"}
+{"prompt":"用一个宫廷谋士的语气，分析为什么沟通很重要。","response":"人心隔肚皮，若言路不通，再忠诚的臣子也会生疑，再周密的谋划也会生变。"}
+{"prompt":"以一位末日幸存者的口吻，说明为什么要节约资源。","response":"在废土上，多浪费一口水，明天就可能少一条命。东西不是用完才珍贵，是活着的人太知道它们来得不易。"}
+{"prompt":"用一个热血体育解说员的语气，鼓励一个刚开始跑步的人。","response":"就是现在，迈出去！别管步子大小，只要你今天没停下，你就已经把昨天那个犹豫的自己甩在身后了！"}
+
+{"prompt":"将以下实体信息转换为 JSON，字段为 name 和 occupation。只输出结果，严禁任何解释或开场白。\n信息：Alice, engineer","response":"{\"name\":\"Alice\",\"occupation\":\"engineer\"}"}
+{"prompt":"将以下会议日程转换为 YAML，字段为 topic 和 start。只输出结果，严禁任何解释或开场白。\n信息：Demo, 14:00","response":"topic: Demo\nstart: 14:00"}
+{"prompt":"将以下列表转换为 JSON 数组，每个元素包含 id 和 name。只输出结果，严禁任何解释或开场白。\n信息：1-John;2-Jane","response":"[{\"id\":1,\"name\":\"John\"},{\"id\":2,\"name\":\"Jane\"}]"}
+{"prompt":"将以下数据转换为 Markdown 表格，列为 Product 和 Quantity。只输出结果，严禁任何解释或开场白。\n数据：Apple 5; Banana 7","response":"| Product | Quantity |\n|---------|----------|\n| Apple   | 5        |\n| Banana  | 7        |"}
+{"prompt":"将以下 API 返回转换为 JSON，对象包含 status 和 message。只输出结果，严禁任何解释或开场白。\n信息：error, failed","response":"{\"status\":\"error\",\"message\":\"failed\"}"}
+{"prompt":"将以下信息转换为 YAML 列表，每项包含 service 和 active。只输出结果，严禁任何解释或开场白。\n信息：auth-true; cache-false","response":"- service: auth\n  active: true\n- service: cache\n  active: false"}
+{"prompt":"将以下信息转换为 JSON，嵌套结构为 config -> retry 和 timeout。只输出结果，严禁任何解释或开场白。\n信息：retry=3, timeout=30","response":"{\"config\":{\"retry\":3,\"timeout\":30}}"}
+{"prompt":"将以下代码片段包装为 JSON，字段为 language 和 snippet。只输出结果，严禁任何解释或开场白。\n代码：echo \"hi\"","response":"{\"language\":\"bash\",\"snippet\":\"echo \\\"hi\\\"\"}"}
+{"prompt":"将以下信息转换为 Markdown 表格，列为 Name 和 Email。只输出结果，严禁任何解释或开场白。\n信息：Tom tom@mail.com; Amy amy@mail.com","response":"| Name | Email         |\n|------|--------------|\n| Tom  | tom@mail.com |\n| Amy  | amy@mail.com |"}
+{"prompt":"将以下信息转换为 JSON 数组，每个元素包含 key 和 value。只输出结果，严禁任何解释或开场白。\n信息：a-1;b-2","response":"[{\"key\":\"a\",\"value\":1},{\"key\":\"b\",\"value\":2}]"}

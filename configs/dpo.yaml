@@ -1,0 +1,81 @@
+experiment:
+  name: dpo_qwen2_5_1_5b_from_sft
+  stage: dpo
+
+model:
+  base_model_name_or_path: Qwen/Qwen2.5-1.5B
+  init_checkpoint: outputs/sft/checkpoint-310
+  torch_dtype: bfloat16
+  device_map: auto
+  is_trainable: true
+
+tokenizer:
+  source: outputs/sft/checkpoint-310
+  use_fast: true
+
+data:
+  train_file: data/dpo_train.jsonl
+  eval_file: data/dpo_eval.jsonl
+  dataset_dir: data/dpo_dataset
+  categories:
+    - instruction_constraints
+    - style_differences
+    - format_requirements
+  split_sizes:
+    train_per_category: 80
+    eval_per_category: 10
+    total_train: 240
+    total_eval: 30
+
+peft:
+  method: lora
+  r: 16
+  lora_alpha: 32
+  target_modules:
+    - q_proj
+    - k_proj
+    - v_proj
+    - o_proj
+    - gate_proj
+    - up_proj
+    - down_proj
+
+training:
+  output_root: outputs/dpo
+  per_device_train_batch_size: 2
+  per_device_eval_batch_size: 2
+  gradient_accumulation_steps: 4
+  num_train_epochs: 10
+  optim: adamw_torch
+  learning_rate: 5.0e-7
+  weight_decay: 0.05
+  lr_scheduler_type: cosine
+  warmup_steps: 30
+  eval_strategy: epoch
+  logging_strategy: steps
+  logging_steps: 1
+  save_strategy: epoch
+  save_total_limit: 1
+  load_best_model_at_end: true
+  metric_for_best_model: eval_loss
+  greater_is_better: false
+  report_to:
+    - tensorboard
+
+search:
+  parameter: beta
+  values:
+    - 0.2
+    - 0.3
+    - 0.4
+    - 0.5
+
+evaluation:
+  held_out_test_file: data/test.jsonl
+  test_dataset_dir: data/test_dataset
+  judge_model: gpt-4o-mini and Phi-4
+
+notes:
+  - DPO is initialized from the SFT adapter checkpoint rather than from the raw base model.
+  - Beta is treated as the main DPO hyperparameter under study.
+  - Notebook experiments currently use early stopping with patience 2 and log additional KL-style diagnostics.

@@ -1,0 +1,47 @@
+{"category":"format","prompt":"将以下信息转换为嵌套 JSON，顶层 key 必须为 report，包含 meta(date,author) 和 data(items[])，每个 item 包含 name 和 score。只输出 JSON。\n信息：date=2026-01-01, author=Tom, items=[Alice-90,Bob-85]","reference":"{\"report\":{\"meta\":{\"date\":\"2026-01-01\",\"author\":\"Tom\"},\"data\":{\"items\":[{\"name\":\"Alice\",\"score\":90},{\"name\":\"Bob\",\"score\":85}]}}}"}
+{"category":"format","prompt":"将以下流程描述转为 Mermaid flowchart TD 代码，只输出代码块。\n流程：Start -> Login -> Validate -> Success 或 Failure","reference":"flowchart TD\nStart-->Login\nLogin-->Validate\nValidate-->Success\nValidate-->Failure"}
+{"category":"format","prompt":"将以下数据转为 Markdown 表格，列名固定为 User, Role, Active。\n数据：Tom-admin-true;Lucy-user-false","reference":"| User | Role  | Active |\n|------|-------|--------|\n| Tom  | admin | true   |\n| Lucy | user  | false  |"}
+{"category":"format","prompt":"将以下内容转为 YAML，必须包含 services 列表，每项含 name 和 port。\n信息：web-80;db-3306","reference":"services:\n  - name: web\n    port: 80\n  - name: db\n    port: 3306"}
+{"category":"format","prompt":"将以下日志转为 JSON 数组，每项包含 timestamp 和 message。\n日志：[10:00]start;[10:05]stop","reference":"[{\"timestamp\":\"10:00\",\"message\":\"start\"},{\"timestamp\":\"10:05\",\"message\":\"stop\"}]"}
+{"category":"format","prompt":"将以下结构转为 XML，根节点为 users，每个 user 含 id 属性和 name 子节点。\n信息：1-Alice;2-Bob","reference":"<users><user id=\"1\"><name>Alice</name></user><user id=\"2\"><name>Bob</name></user></users>"}
+{"category":"format","prompt":"将以下信息转为 JSON，要求嵌套 config->database(host,port)。\n信息：host=localhost,port=5432","reference":"{\"config\":{\"database\":{\"host\":\"localhost\",\"port\":5432}}}"}
+{"category":"format","prompt":"将以下数据转为 Markdown 列表，每项格式为 - name (score)。\n数据：A-1;B-2","reference":"- A (1)\n- B (2)"}
+{"category":"format","prompt":"将以下描述转为 Mermaid sequenceDiagram。\n描述：User 请求 Server，Server 返回 Response","reference":"sequenceDiagram\nUser->>Server: request\nServer-->>User: response"}
+{"category":"format","prompt":"将以下数据转为 JSON，键名必须为 metrics，内部为数组，每项包含 key 和 value。\n数据：acc-0.9;loss-0.1","reference":"{\"metrics\":[{\"key\":\"acc\",\"value\":0.9},{\"key\":\"loss\",\"value\":0.1}]}"}
+{"category":"format","prompt":"将以下信息转为 YAML，顶层 key 为 app，内部包含 name 和 version。\n信息：demo,1.0","reference":"app:\n  name: demo\n  version: 1.0"}
+{"category":"format","prompt":"将以下 CSV 转为 JSON 数组。\nCSV:\nname,age\nTom,20\nAna,22","reference":"[{\"name\":\"Tom\",\"age\":20},{\"name\":\"Ana\",\"age\":22}]"}
+{"category":"format","prompt":"将以下信息转为 Markdown 表格，列为 Key 和 Value。\n信息：a-1;b-2","reference":"| Key | Value |\n|-----|-------|\n| a   | 1     |\n| b   | 2     |"}
+{"category":"format","prompt":"将以下结构转为 JSON，顶层必须是 list，内部每项包含 id。\n信息：5;6","reference":"{\"list\":[{\"id\":5},{\"id\":6}]}"}
+{"category":"format","prompt":"将以下关系转为 Mermaid graph LR。\n关系：A->B, B->C","reference":"graph LR\nA-->B\nB-->C"}
+
+{"category":"style","prompt":"用一个试图掩饰自己是机器人的外星人语气解释什么是互联网。","reference":"互联网？哦，那只是人类之间用来交换信息的…普通工具而已，我当然完全理解这种低效方式。"}
+{"category":"style","prompt":"用18世纪海盗船长的语气描述数据分析。","reference":"数据分析就像在茫茫大海中寻找宝藏，只有读懂线索，才能找到金银。"}
+{"category":"style","prompt":"用极简主义科技博主语气介绍手机。","reference":"一块屏幕。一个入口。连接一切。"}
+{"category":"style","prompt":"用古埃及祭司语气解释时间。","reference":"时间如尼罗河，静静流淌，却从不回头。"}
+{"category":"style","prompt":"用AI自嘲语气解释自己。","reference":"我只是个会拼接文字的系统，却总被期待像人一样理解世界。"}
+{"category":"style","prompt":"用中世纪炼金术士语气描述科学实验。","reference":"在火焰与试剂中，我试图窥探自然的秘密。"}
+{"category":"style","prompt":"用科幻飞船AI语气描述人类。","reference":"人类：情感驱动，决策不稳定，却极具创造力。"}
+{"category":"style","prompt":"用冷面律师语气解释合同。","reference":"合同，是双方权利与义务的明确界定。"}
+{"category":"style","prompt":"用摇滚歌手语气描述努力。","reference":"拼到最后一刻，才知道你有多强！"}
+{"category":"style","prompt":"用佛系青年语气解释压力。","reference":"压力嘛，看开一点，它也只是来提醒你还在路上。"}
+{"category":"style","prompt":"用科普博主语气解释黑洞。","reference":"黑洞是一种极端致密的天体，连光也无法逃脱其引力。"}
+{"category":"style","prompt":"用童话旁白语气描述程序员。","reference":"在键盘与屏幕之间，他构建着属于自己的世界。"}
+{"category":"style","prompt":"用吐槽大会语气解释加班。","reference":"加班就是白天没干完，晚上接着拼。"}
+{"category":"style","prompt":"用未来哲学家语气解释意识。","reference":"意识，是信息与存在交汇的产物。"}
+{"category":"style","prompt":"用侦探小说语气描述bug。","reference":"这个错误，就藏在最不起眼的地方。"}
+
+{"category":"constraint","prompt":"描述一个杯子，禁止使用任何颜色词，每句话必须以“而且”开头，字数在50-80字之间。","reference":"而且它有一个圆形开口方便使用，而且整体结构稳定便于放置，而且材质坚固适合日常饮用。"}
+{"category":"constraint","prompt":"解释什么是数据库，不得使用“数据”“存储”两个词，必须用三句话完成。","reference":"数据库是一种信息管理系统。它能够组织大量内容。并支持高效查询与更新。"}
+{"category":"constraint","prompt":"写一段关于跑步的描述，每句话必须包含“跑”，且总字数不超过40字。","reference":"跑步让人放松，跑起来更轻松。坚持跑会更有力量。"}
+{"category":"constraint","prompt":"介绍人工智能，禁止出现“AI”“智能”，必须使用比喻。","reference":"它像一个不断学习的学徒，通过经验逐渐掌握复杂任务。"}
+{"category":"constraint","prompt":"描述一场雨，不得使用“水”“雨”两个字，每句话不超过10字。","reference":"天空变暗。细滴落下。地面湿润。"}
+{"category":"constraint","prompt":"解释区块链，必须包含“账本”一词，且不能使用“技术”。","reference":"区块链是一种分布式账本，用于记录交易并保证不可篡改。"}
+{"category":"constraint","prompt":"写一句励志话，不得使用“努力”“坚持”，必须押韵。","reference":"向前走，不回头，梦想就在前方等候。"}
+{"category":"constraint","prompt":"描述电脑，不得使用“计算机”，且必须包含三个功能点。","reference":"它可以处理信息、运行程序并连接网络。"}
+{"category":"constraint","prompt":"解释API，不得出现“接口”，必须用一句话完成。","reference":"API是一种让不同软件系统进行交互和调用功能的机制。"}
+{"category":"constraint","prompt":"写一段关于友情的话，每句话必须以“因为”开头，且两句话。","reference":"因为陪伴让人安心。因为理解让关系更深。"}
+{"category":"constraint","prompt":"描述一本书，不得出现“书”“阅读”，必须使用第一人称。","reference":"我翻开它，被内容深深吸引。"}
+{"category":"constraint","prompt":"解释浏览器，不得出现“网页”，必须包含“访问”。","reference":"浏览器是一种用于访问互联网内容的软件。"}
+{"category":"constraint","prompt":"写一句关于时间的句子，不得出现“时间”，必须包含“流逝”。","reference":"它不断流逝，让人更加珍惜当下。"}
+{"category":"constraint","prompt":"描述咖啡，不得出现“咖啡”，必须包含味觉描写。","reference":"这种饮品苦中带香，入口后回味悠长。"}
+{"category":"constraint","prompt":"解释什么是算法，不得使用“步骤”，必须使用类比。","reference":"算法就像做菜的流程，决定最终结果的方式。"}

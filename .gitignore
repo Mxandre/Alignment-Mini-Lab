@@ -1,0 +1,55 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+venv/
+env/
+.env
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS / editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# Local experiment outputs
+outputs/
+
+# Keep the directory structure if needed
+!outputs/.gitkeep
+
+# Hugging Face / training artifacts
+checkpoint-*/
+**/checkpoint-*/
+*.safetensors
+*.bin
+*.pt
+*.pth
+events.out.tfevents.*
+runs/
+**/runs/
+
+# Plot / metric artifacts
+*.png
+*.pdf
+*.svg
+
+# Dataset cache or local serialized datasets
+data/sft_dataset/
+data/dpo_dataset/
+data/test_dataset/
+
+# Optional large local data artifacts
+*.arrow
+*.parquet
+
+# Logs
+*.log

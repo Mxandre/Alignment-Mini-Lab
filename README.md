@@ -167,4 +167,15 @@ alignment-mini-lab/
 - DPO training currently explores the effect of `beta` rather than claiming a single best final setting.
 
 ## Interesing Discovery
-When $\beta$ decreases from 0.5 to 0.2, the model moves out of the golden alignment region, and the KL divergence increases by 0.3. Expanding the increment according to the formula $D_{KL}(P \parallel R) = H(P, R) - H(P)$, this 0.3 increase is not entirely due to the model spouting nonsense (increased cross-entropy); it also contains an overlooked warning sign: a collapse in the model’s own entropy ($\Delta H(P) < 0$). At excessively low $\beta$ values, the model experiences a clear “mode collapse.” In an effort to cater to preferences, lexical diversity plummets, and the model relies heavily on a small set of stereotypical words (such as forcing English words into the text). Ultimately, while it strongly emphasizes the “pirate” persona, the naturalness and fluency of the language completely collapse.
+We observe that the DPO hyperparameter beta has a substantial impact on downstream performance. With an initially small beta setting, DPO underperformed SFT and even produced unstable outputs such as mixed Chinese-English responses. As beta was tuned, DPO performance improved significantly. For example, the win-rate comparison evolved from SFT: 27, DPO: 15, Tie: 3 at one setting to SFT: 16, DPO: 21, Tie: 8 at beta = 0.5.
+At the same time, the effect of beta was not monotonic: performance slightly dropped at beta = 0.4 and then improved again at beta = 0.5. This suggests that beta controls a delicate trade-off between preserving the SFT behavior and enforcing preference optimization.
+To further analyze this behavior, we introduced a token-level KL divergence metric. We found that poorer-performing settings were associated with larger KL values, indicating that excessive deviation from the reference policy may hurt generation quality and consistency.
+
+
+## Experiments Result
+| beta | SFT win | DPO win | Tie | token-level KL(eval) | 
+| ---- | --------| --------| ----| ---------------|
+| 0.2  | 27      |     15  |  3  |   1.6652        |
+| 0.3  | 17      |    21   |  7  |   1.3655        |
+| 0.4  | 21      |    18   |  6  |   1.3567        |
+| 0.5  | 16      | 21      |  8  |   1.3529        |

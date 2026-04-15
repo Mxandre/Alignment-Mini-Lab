@@ -1,21 +1,28 @@
 import torch
 import torch.nn as nn
-from transformers import AutoModel
+from transformers import AutoModel, BitsAndBytesConfig
 from peft import LoraConfig, get_peft_model, TaskType
 
 class MyRewardModel(nn.Module):
-    def __init__(self, model_name_or_path):
+    def __init__(self, model_name_or_path, r, alpha, dropout):
         super().__init__()
-        backbone = AutoModel.from_pretrained(model_name_or_path, dtype = torch.bfloat16)
-        
+        bnb_config = BitsAndBytesConfig(
+            load_in_8bit=True
+        )
+        backbone = AutoModel.from_pretrained(model_name_or_path, quantization_config = bnb_config, attn_implementation="flash_attention_2", dtype = torch.bfloat16, device_map = "cuda")
+        backbone.gradient_checkpointing_enable()
+        if hasattr(backbone, "enable_input_require_grads"):
+            backbone.enable_input_require_grads()
         peft_config = LoraConfig(
             task_type = TaskType.FEATURE_EXTRACTION,
-            r = 8, 
-            lora_alpha = 16,
-            lora_dropout = 0.1,
+            r = r, 
+            lora_alpha = alpha,
+            lora_dropout = dropout,
             target_modules = ["q_proj", "v_proj", "k_proj","o_proj", "gate_proj", "up_proj", "down_proj"]
         )
         self.backbone = get_peft_model(backbone, peft_config)
+        if hasattr(self.backbone, "enable_input_require_grads"):
+            self.backbone.enable_input_require_grads()
 
         self.config = self.backbone.config
         hidden_size = getattr(self.config, "word_embed_proj_dim", self.config.hidden_size)

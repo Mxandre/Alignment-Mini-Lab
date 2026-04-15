@@ -33,6 +33,7 @@ def parse_args():
     parser.add_argument("--weight_decay", type=float, default= 0.0)
     parser.add_argument("--lora_r", type = int, default= 16)
     parser.add_argument("--lora_alpha", type = int, default=32)
+    parser.add_argument("--lora_dropout", type = int, default = 0.1)
     parser.add_argument("--seed", type = int, default= 42)
 
     parser.add_argument("--patience", type=int, default=3, help="How many epochs to wait before stopping")
@@ -66,10 +67,10 @@ def main():
     eval_dataset = UltraRewardDataset(split_results["test"])
     collator = MyRewardCollator(tokenizer, max_length=args.max_length)
     train_dataloader = DataLoader(train_dataset, batch_size=args.batch_size, shuffle=True, collate_fn=collator)
-    eval_dataloader = DataLoader(eval_dataset, batch_size=4, shuffle = False, collate_fn = collator)
+    eval_dataloader = DataLoader(eval_dataset, batch_size=args.batch_size, shuffle = False, collate_fn = collator)
     
     # 3. 初始化模型和调度器
-    model = MyRewardModel(args.model_name).to("cuda")
+    model = MyRewardModel(args.model_name, args.lora_r, args.lora_alpha, args.lora_dropout).to("cuda")
     optimizer = AdamW(model.parameters(), lr=args.lr, weight_decay=args.weight_decay)
     early_stopping = EarlyStopping(patience= args.patience)
     
@@ -90,25 +91,27 @@ def main():
         for i, batch in enumerate(tqdm.tqdm(train_dataloader, desc=f"Epoch {epoch}")):
             c_ids, c_mask = batch["chosen_input_ids"].to("cuda"), batch["chosen_attention_mask"].to("cuda")
             r_ids, r_mask = batch["rejected_input_ids"].to("cuda"), batch["rejected_attention_mask"].to("cuda")
-            with torch.amp.autocast(dtype = torch.bfloat16):
+            with torch.amp.autocast(device_type = "cuda", dtype = torch.bfloat16):
                 r_chosen = model(c_ids, c_mask)
                 r_rejected = model(r_ids, r_mask)
                 loss = log_sigmoid_loss(r_chosen, r_rejected)
                 loss = loss / accumulation_steps
 
             loss.backward()
-            if (i+1) % accumulation_steps : 
+            if (i+1) % accumulation_steps == 0 : 
                 grad_norm = clip_grad_norm_(model.parameters(), max_norm = 1)
                 optimizer.step()
                 lr_scheduler.step()
                 optimizer.zero_grad()
-            total_loss += loss.item() * accumulation_steps
-            wandb.log({
+                grad_norm_value = grad_norm.item()
+                wandb.log({
             "train/loss": loss.item(),
             "train/lr": lr_scheduler.get_last_lr()[0],
             "train/margin": (r_chosen - r_rejected).mean().item(),
             "train/grad_norm": grad_norm.item()
         })
+
+            total_loss += loss.item() * accumulation_steps
         print(f"Epoch {epoch} Average Loss : {total_loss / len(train_dataloader)}")
 
         with torch.no_grad():

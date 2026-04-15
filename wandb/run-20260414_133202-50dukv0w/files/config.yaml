@@ -1,0 +1,85 @@
+_wandb:
+    value:
+        cli_version: 0.25.1
+        e:
+            ae4l5g51qmk9zxaa5gt3p9dbn0de3rz4:
+                cpu_count: 24
+                cpu_count_logical: 32
+                cudaVersion: "13.0"
+                disk:
+                    /:
+                        total: "373831307264"
+                        used: "252709646336"
+                email: 2505372177@qq.com
+                executable: D:\Anaconda\envs\diffusion\python.exe
+                git:
+                    commit: 3549bca20f7e64d531d1ee21faaf32507e02f0ab
+                    remote: git@github.com:Mxandre/Alignment-Mini-Lab.git
+                gpu: NVIDIA GeForce RTX 4060 Laptop GPU
+                gpu_count: 1
+                gpu_nvidia:
+                    - architecture: Ada
+                      cudaCores: 3072
+                      memoryTotal: "8585740288"
+                      name: NVIDIA GeForce RTX 4060 Laptop GPU
+                      uuid: GPU-06932b30-c605-bb1b-3b2c-5448b1d921b0
+                host: LAPTOP-ANKEHM8U
+                memory:
+                    total: "16771858432"
+                os: Windows-10-10.0.26200-SP0
+                program: -m reward_model.train
+                python: CPython 3.10.19
+                root: C:\Users\Alexander\OneDrive\自学计划\第三周材料\mini-dpo-sft-lab\alignment-mini-lab
+                startedAt: "2026-04-14T11:32:02.309134Z"
+                writerId: ae4l5g51qmk9zxaa5gt3p9dbn0de3rz4
+        m: []
+        python_version: 3.10.19
+        t:
+            "1":
+                - 1
+                - 5
+                - 11
+                - 41
+                - 49
+                - 51
+                - 53
+                - 71
+                - 98
+            "2":
+                - 1
+                - 5
+                - 11
+                - 41
+                - 49
+                - 51
+                - 53
+                - 71
+                - 98
+            "3":
+                - 13
+                - 16
+            "4": 3.10.19
+            "5": 0.25.1
+            "6": 5.4.0
+            "8":
+                - 3
+            "12": 0.25.1
+            "13": windows-amd64
+batch_size:
+    value: 4
+eval_path:
+    value: data/dpo_eval.jsonl
+lr:
+    value: 5e-06
+max_length:
+    value: 1024
+model_name:
+    value: Qwen/Qwen2.5-1.5B
+num_epochs:
+    value: 3
+patience:
+    value: 3
+save_path:
+    value: reward_model/results/best
+train_path:
+    value: data/dpo_train.jsonl

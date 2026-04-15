@@ -1,0 +1,19 @@
+python train_ppo.py \
+  --model_name Qwen/Qwen2.5-1.5B \
+  --dataset_name json \
+  --train_file data/sft_train.jsonl \
+  --eval_file data/sft_eval.jsonl \
+  --output_dir outputs/ppo_local_debug \
+  --prompt_key prompt \
+  --rollout_batch_size 1 \
+  --mini_batch_size 1 \
+  --ppo_epochs 1 \
+  --total_episodes 11 \
+  --buffer_target_size 4 \
+  --num_eval_batches 1 \
+  --eval_batch_size 1 \
+  --eval_every 1 \
+  --max_prompt_length 64 \
+  --max_new_tokens 32 \
+  --eval_max_new_tokens 32 \
+  --max_total_length 128

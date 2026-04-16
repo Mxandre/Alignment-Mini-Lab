@@ -66,10 +66,14 @@ def main():
         for batch in tqdm.tqdm(test_dataloader):
             c_ids, c_mask = batch["chosen_input_ids"].to("cuda"), batch["chosen_attention_mask"].to("cuda")
             r_ids, r_mask = batch["rejected_input_ids"].to("cuda"), batch["rejected_attention_mask"].to("cuda")
-
-            chosen_reward  = model(c_ids, c_mask)
-            rejected_reward = model(r_ids, r_mask)
             batch_size = c_ids.size(0)
+            all_ids = torch.cat([c_ids, r_ids], dim = 0)
+            all_mask = torch.cat([c_mask, r_mask], dim = 0)
+
+            all_rewards = model(all_ids, all_mask)
+            chosen_reward = all_rewards[:batch_size]
+            rejected_reward = all_rewards[batch_size:]
+
             total_count += batch_size
             correct_count += (chosen_reward > rejected_reward).sum()
             c_list = chosen_reward.cpu().float().tolist()

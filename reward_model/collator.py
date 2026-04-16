@@ -13,36 +13,31 @@ class MyRewardCollator :
             self.tokenizer.pad_token = self.tokenizer.eos.token
         self.tokenizer.padding_side = "right"
     
-    def __call__(self, features : List[Dict[str, str]]) -> Dict[str, torch.Tensor]:
-        all_chosen_texts = []
-        all_rejected_texts = []
+    def __call__(self, features: List[Dict[str, str]]) -> Dict[str, torch.Tensor]:
+        all_texts = []
 
-        for item in features :
+        for item in features:
             p = item["prompt"]
-            all_chosen_texts.append(f"Prompt: {p}\n\nResponse: {item['chosen']}")
-            all_rejected_texts.append(f"Prompt: {p}\n\nResponse: {item['rejected']}")\
-            
-        chosen_batch = self.tokenizer(
-            all_chosen_texts,
-            max_length = self.max_length,
-            truncation = True,
-            padding = True,
-            return_tensors = "pt"
+            all_texts.append(f"Prompt: {p}\n\nResponse: {item['chosen']}")
+        for item in features:
+            p = item["prompt"]
+            all_texts.append(f"Prompt: {p}\n\nResponse: {item['rejected']}")
+
+
+        full_batch = self.tokenizer(
+            all_texts,
+            max_length=self.max_length,
+            truncation=True,
+            padding=True, 
+            return_tensors="pt"
         )
 
-        rejected_batch = self.tokenizer(
-            all_rejected_texts,
-            max_length = self.max_length,
-            truncation = True,
-            padding = True,
-            return_tensors = "pt"
-        )
-
+        batch_size = len(features)
         return {
-            "chosen_input_ids" : chosen_batch["input_ids"],
-            "chosen_attention_mask" : chosen_batch["attention_mask"],
-            "rejected_input_ids" : rejected_batch["input_ids"],
-            "rejected_attention_mask" :  rejected_batch["attention_mask"]
+            "chosen_input_ids": full_batch["input_ids"][:batch_size],
+            "chosen_attention_mask": full_batch["attention_mask"][:batch_size],
+            "rejected_input_ids": full_batch["input_ids"][batch_size:],
+            "rejected_attention_mask": full_batch["attention_mask"][batch_size:]
         }
     
 class SimpleInferenceCollator:

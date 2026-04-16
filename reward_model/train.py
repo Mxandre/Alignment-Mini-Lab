@@ -66,7 +66,7 @@ def main():
     eval_dataset = UltraRewardDataset(split_results["test"])
     collator = MyRewardCollator(tokenizer, max_length=args.max_length)
     train_dataloader = DataLoader(train_dataset, batch_size=args.batch_size, shuffle=True, collate_fn=collator)
-    eval_dataloader = DataLoader(eval_dataset, batch_size=4, shuffle = False, collate_fn = collator)
+    eval_dataloader = DataLoader(eval_dataset, batch_size=args.batch_size, shuffle = False, collate_fn = collator)
     
     # 3. 初始化模型和调度器
     model = MyRewardModel(args.model_name).to("cuda")
@@ -87,28 +87,35 @@ def main():
     for epoch in range(args.num_epochs):
         model.train()
         total_loss = 0
+        running_loss = 0.0
+        running_acc = 0.0
         for i, batch in enumerate(tqdm.tqdm(train_dataloader, desc=f"Epoch {epoch}")):
             c_ids, c_mask = batch["chosen_input_ids"].to("cuda"), batch["chosen_attention_mask"].to("cuda")
             r_ids, r_mask = batch["rejected_input_ids"].to("cuda"), batch["rejected_attention_mask"].to("cuda")
-            with torch.amp.autocast(dtype = torch.bfloat16):
+            with torch.amp.autocast(device_type="cuda", dtype = torch.bfloat16):
                 r_chosen = model(c_ids, c_mask)
                 r_rejected = model(r_ids, r_mask)
                 loss = log_sigmoid_loss(r_chosen, r_rejected)
                 loss = loss / accumulation_steps
-
+                
+            running_loss += (loss / accumulation_steps).item()
+            running_acc += (r_chosen > r_rejected).float().mean().item() / accumulation_steps
             loss.backward()
-            if (i+1) % accumulation_steps : 
+            if (i+1) % accumulation_steps ==0 : 
                 grad_norm = clip_grad_norm_(model.parameters(), max_norm = 1)
                 optimizer.step()
                 lr_scheduler.step()
                 optimizer.zero_grad()
-            total_loss += loss.item() * accumulation_steps
-            wandb.log({
-            "train/loss": loss.item(),
+                running_acc = 0.0 
+                running_loss = 0.0
+                wandb.log({
+            "train/loss": running_loss,
             "train/lr": lr_scheduler.get_last_lr()[0],
             "train/margin": (r_chosen - r_rejected).mean().item(),
-            "train/grad_norm": grad_norm.item()
+            "train/grad_norm": grad_norm.item(),
+            "train/accuracy" : running_acc
         })
+            total_loss += loss.item() * accumulation_steps
         print(f"Epoch {epoch} Average Loss : {total_loss / len(train_dataloader)}")
 
         with torch.no_grad():
@@ -134,6 +141,7 @@ def main():
             "val/best_accuracy": best_acc if accuracy <= best_acc else accuracy,
             "val/chosen_rewards_dist": wandb.Histogram(all_chosen_rewards),
             "val/rejected_rewards_dist": wandb.Histogram(all_rejected_rewards),
+            "val/margin": (r_chosen - r_rejected).mean().item()
         })
 
             if accuracy > best_acc:

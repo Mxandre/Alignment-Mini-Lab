@@ -33,6 +33,7 @@ def parse_args():
     parser.add_argument("--weight_decay", type=float, default= 0.0)
     parser.add_argument("--lora_r", type = int, default= 16)
     parser.add_argument("--lora_alpha", type = int, default=32)
+    parser.add_argument("--lora_dropout", type = int, default = 0.1)
     parser.add_argument("--seed", type = int, default= 42)
 
     parser.add_argument("--patience", type=int, default=3, help="How many epochs to wait before stopping")
@@ -59,21 +60,22 @@ def main():
     # eval_dataset = RewardDataset(args.eval_path)
 
     ## use ultra ndataset
+    data_path = "/root/autodl-tmp/datasets/ultrafeedback_binarized"
 
-    raw_ds = load_dataset("HuggingFaceH4/ultrafeedback_binarized")
+    raw_ds = load_dataset("HuggingFaceH4/ultrafeedback_binarized", cache_dir = data_path)
     split_results = raw_ds["train_prefs"].train_test_split(test_size = 0.2, seed = args.seed )
-    train_dataset = UltraRewardDataset(split_results["train"])
-    eval_dataset = UltraRewardDataset(split_results["test"])
+    train_dataset = UltraRewardDataset(split_results["train"].shuffle(seed=args.seed).select(range(2000)))
+    eval_dataset = UltraRewardDataset(split_results["test"].shuffle(seed=args.seed).select(range(200)))
     collator = MyRewardCollator(tokenizer, max_length=args.max_length)
     train_dataloader = DataLoader(train_dataset, batch_size=args.batch_size, shuffle=True, collate_fn=collator)
     eval_dataloader = DataLoader(eval_dataset, batch_size=args.batch_size, shuffle = False, collate_fn = collator)
     
     # 3. 初始化模型和调度器
-    model = MyRewardModel(args.model_name).to("cuda")
+    model = MyRewardModel(args.model_name, args.lora_r, args.lora_alpha, args.lora_dropout).to("cuda")
     optimizer = AdamW(model.parameters(), lr=args.lr, weight_decay=args.weight_decay)
     early_stopping = EarlyStopping(patience= args.patience)
     
-    total_steps = len(train_dataloader) * args.num_epochs
+    total_steps = len(train_dataloader) * args.num_epochs / args.accumulation_steps
     
     lr_scheduler = get_cosine_schedule_with_warmup(
         optimizer, num_warmup_steps=int(0.1 * total_steps), num_training_steps=total_steps
@@ -92,7 +94,11 @@ def main():
         for i, batch in enumerate(tqdm.tqdm(train_dataloader, desc=f"Epoch {epoch}")):
             c_ids, c_mask = batch["chosen_input_ids"].to("cuda"), batch["chosen_attention_mask"].to("cuda")
             r_ids, r_mask = batch["rejected_input_ids"].to("cuda"), batch["rejected_attention_mask"].to("cuda")
+<<<<<<< HEAD
             with torch.amp.autocast(device_type="cuda", dtype = torch.bfloat16):
+=======
+            with torch.amp.autocast(device_type = "cuda", dtype = torch.bfloat16):
+>>>>>>> cce02e2366f5cb414d51110077f2a82b16a76785
                 r_chosen = model(c_ids, c_mask)
                 r_rejected = model(r_ids, r_mask)
                 loss = log_sigmoid_loss(r_chosen, r_rejected)
@@ -101,20 +107,34 @@ def main():
             running_loss += (loss / accumulation_steps).item()
             running_acc += (r_chosen > r_rejected).float().mean().item() / accumulation_steps
             loss.backward()
+<<<<<<< HEAD
             if (i+1) % accumulation_steps ==0 : 
+=======
+            if (i+1) % accumulation_steps == 0 : 
+>>>>>>> cce02e2366f5cb414d51110077f2a82b16a76785
                 grad_norm = clip_grad_norm_(model.parameters(), max_norm = 1)
                 optimizer.step()
                 lr_scheduler.step()
                 optimizer.zero_grad()
+<<<<<<< HEAD
                 running_acc = 0.0 
                 running_loss = 0.0
                 wandb.log({
             "train/loss": running_loss,
+=======
+                grad_norm_value = grad_norm.item()
+                wandb.log({
+            "train/loss": loss.item(),
+>>>>>>> cce02e2366f5cb414d51110077f2a82b16a76785
             "train/lr": lr_scheduler.get_last_lr()[0],
             "train/margin": (r_chosen - r_rejected).mean().item(),
             "train/grad_norm": grad_norm.item(),
             "train/accuracy" : running_acc
         })
+<<<<<<< HEAD
+=======
+
+>>>>>>> cce02e2366f5cb414d51110077f2a82b16a76785
             total_loss += loss.item() * accumulation_steps
         print(f"Epoch {epoch} Average Loss : {total_loss / len(train_dataloader)}")
 

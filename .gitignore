@@ -53,3 +53,5 @@ data/test_dataset/
 
 # Logs
 *.log
+
+wandb/

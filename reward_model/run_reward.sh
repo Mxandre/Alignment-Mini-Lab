@@ -17,8 +17,8 @@ python reward_model/train.py \
     --model_name "$MODEL_PATH" \
     --train_path "HuggingFaceH4/ultrafeedback_binarized" \
     --save_path "$SAVE_PATH" \
-    --num_epochs 1 \
-    --batch_size 2 \
+    --num_epochs 5 \
+    --batch_size 4 \
     --accumulation_steps 8 \
     --lr 2e-5 \
     --max_length 2048 \

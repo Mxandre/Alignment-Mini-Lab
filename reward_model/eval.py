@@ -15,7 +15,7 @@ from datasets import load_dataset
 def parse_args():
     parser = argparse.ArgumentParser(description = "Evaluate the Reward Model")
     parser.add_argument("--reward_model_name", type = str, default = "Qwen/Qwen2.5-7B", help = "The Model name")
-    parser.add_argument("--reward_checkpoint_path", type = str, default = "reward_model_v1/reward_adapter.pth", help = "Save_model_path" )
+    parser.add_argument("--reward_checkpoint_path", type = str, default = "output/reward_model_v1/reward_adapter.pth", help = "Save_model_path" )
     parser.add_argument("--test_path", type = str, default= "data/test_rm.jsonl", help = "test data path")
     parser.add_argument("--batch_size", type=int, default=8)
     parser.add_argument("--max_length", type=int, default=512)
@@ -52,11 +52,11 @@ def main():
     data_path = "/root/autodl-tmp/datasets/ultrafeedback_binarized"
 
     raw_ds = load_dataset("HuggingFaceH4/ultrafeedback_binarized", cache_dir = data_path)
-    test_dataset = UltraRewardDataset(raw_ds["test"])
+    test_dataset = UltraRewardDataset(raw_ds["test_prefs"])
 
     model, tokenizer = load_model_and_tokenizer(args)
     test_collator = MyRewardCollator(tokenizer, max_length=args.max_length)
-    test_dataloader = DataLoader(test_dataset, batch_size= args.batch_size, shuffle = False, collate_fn=test_collator)
+    test_dataloader = DataLoader(test_dataset, batch_size= args.batch_size, shuffle = False, collate_fn=test_collator, num_workers = 8)
 
     print("starting evaluation")
     results = []

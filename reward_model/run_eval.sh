@@ -11,17 +11,8 @@ MODEL_PATH="Qwen/Qwen2.5-7B"  # 或者 1.5B 全参数
 
 python reward_model/eval.py \
     --reward_model_name "$MODEL_PATH" \
-    --reward_checkpoint_path "reward_model_v1/reward_adapter.pth" \
-    --save_path "$SAVE_PATH" \
-    --num_epochs 5 \
-    --batch_size 4 \
-    --accumulation_steps 8 \
-    --lr 2e-5 \
+    --reward_checkpoint_path "/root/autodl-tmp/output/reward_model_v1/reward_adapter.pth" \
+    --batch_size 32 \
     --max_length 2048 \
-    --weight_decay 0.01 \
-    --patience 3 \
-    --seed 42 \
-    --lora_r 64 \
-    --lora_alpha 128 \
 
 echo "Reward Model Training Finished!"

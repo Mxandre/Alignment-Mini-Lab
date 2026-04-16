@@ -9,7 +9,7 @@ class MyRewardModel(nn.Module):
         bnb_config = BitsAndBytesConfig(
             load_in_8bit=True
         )
-        backbone = AutoModel.from_pretrained(model_name_or_path, quantization_config = bnb_config, attn_implementation="flash_attention_2", dtype = torch.bfloat16, device_map = "cuda")
+        backbone = AutoModel.from_pretrained(model_name_or_path, quantization_config = bnb_config, dtype = torch.bfloat16, device_map = "cuda")
         backbone.gradient_checkpointing_enable()
         if hasattr(backbone, "enable_input_require_grads"):
             backbone.enable_input_require_grads()

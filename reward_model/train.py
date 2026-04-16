@@ -60,11 +60,12 @@ def main():
     # eval_dataset = RewardDataset(args.eval_path)
 
     ## use ultra ndataset
+    data_path = "/root/autodl-tmp/datasets/ultrafeedback_binarized"
 
-    raw_ds = load_dataset("HuggingFaceH4/ultrafeedback_binarized")
+    raw_ds = load_dataset("HuggingFaceH4/ultrafeedback_binarized", cache_dir = data_path)
     split_results = raw_ds["train_prefs"].train_test_split(test_size = 0.2, seed = args.seed )
-    train_dataset = UltraRewardDataset(split_results["train"])
-    eval_dataset = UltraRewardDataset(split_results["test"])
+    train_dataset = UltraRewardDataset(split_results["train"].shuffle(seed=args.seed).select(range(2000)))
+    eval_dataset = UltraRewardDataset(split_results["test"].shuffle(seed=args.seed).select(range(200)))
     collator = MyRewardCollator(tokenizer, max_length=args.max_length)
     train_dataloader = DataLoader(train_dataset, batch_size=args.batch_size, shuffle=True, collate_fn=collator)
     eval_dataloader = DataLoader(eval_dataset, batch_size=args.batch_size, shuffle = False, collate_fn = collator)
@@ -74,7 +75,7 @@ def main():
     optimizer = AdamW(model.parameters(), lr=args.lr, weight_decay=args.weight_decay)
     early_stopping = EarlyStopping(patience= args.patience)
     
-    total_steps = len(train_dataloader) * args.num_epochs
+    total_steps = len(train_dataloader) * args.num_epochs / args.accumulation_steps
     
     lr_scheduler = get_cosine_schedule_with_warmup(
         optimizer, num_warmup_steps=int(0.1 * total_steps), num_training_steps=total_steps

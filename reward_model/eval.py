@@ -2,7 +2,7 @@ import argparse
 from transformers import AutoTokenizer
 from reward_model.model import MyRewardModel
 import torch
-from reward_model.rm_dataset import RewardDataset
+from reward_model.rm_dataset import RewardDataset, UltraRewardDataset
 from reward_model.collator import MyRewardCollator
 from torch.utils.data import DataLoader
 import tqdm
@@ -10,28 +10,28 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 from pathlib import Path
+from datasets import load_dataset
 
 def parse_args():
     parser = argparse.ArgumentParser(description = "Evaluate the Reward Model")
-    parser.add_argument("--reward_model_name", type = str, default = "Qwen/Qwen2.5-1.5B", help = "The Model name")
+    parser.add_argument("--reward_model_name", type = str, default = "Qwen/Qwen2.5-7B", help = "The Model name")
     parser.add_argument("--reward_checkpoint_path", type = str, default = "reward_model_v1/reward_adapter.pth", help = "Save_model_path" )
     parser.add_argument("--test_path", type = str, default= "data/test_rm.jsonl", help = "test data path")
     parser.add_argument("--batch_size", type=int, default=8)
     parser.add_argument("--max_length", type=int, default=512)
     parser.add_argument("--output_csv", type = str, default = "reward_model/results/test.csv", help = "results save path")
     parser.add_argument("--save_fig_path", type = str, default = "reward_model/results/fig", help = "Path to save the figure")
-    parser.add_argument("--lora_r", type = int, default= 16)
-    parser.add_argument("--lora_alpha", type = int, default=32)
-    parser.add_argument("--lora_dropout", type = int, default = 0.1)
     return parser.parse_args()
 
 def load_model_and_tokenizer(args):
+    print(f"Loading the checkpoint from {args.reward_checkpoint_path}")
+    checkpoint = torch.load(args.reward_checkpoint_path, map_location = "cpu")
+    saved_args = checkpoint["args"]
     tokenizer = AutoTokenizer.from_pretrained(args.reward_model_name)
 
-    model = MyRewardModel(args.reward_model_name, args.lora_r, args.lora_alpha, args.lora_dropout)
+    model = MyRewardModel(args.reward_model_name, saved_args['lora_r'], saved_args['lora_alpha'], saved_args['lora_dropout'])
 
-    print(f"Loading the checkpoint from {args.reward_checkpoint_path}")
-    checkpoint = torch.load(args.reward_checkpoint_path, map_location = "cuda")
+    
     state_dict = checkpoint.get("model_state_dict", checkpoint)
 
     if any("value_head" in k for k in state_dict.keys()):
@@ -48,7 +48,11 @@ def load_model_and_tokenizer(args):
 def main():
     args = parse_args()
 
-    test_dataset = RewardDataset(args.test_path)
+    # test_dataset = RewardDataset(args.test_path)  here you can use your own dataset
+    data_path = "/root/autodl-tmp/datasets/ultrafeedback_binarized"
+
+    raw_ds = load_dataset("HuggingFaceH4/ultrafeedback_binarized", cache_dir = data_path)
+    test_dataset = UltraRewardDataset(raw_ds["test"])
 
     model, tokenizer = load_model_and_tokenizer(args)
     test_collator = MyRewardCollator(tokenizer, max_length=args.max_length)

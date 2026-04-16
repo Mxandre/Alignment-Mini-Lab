@@ -13,6 +13,7 @@ from pathlib import Path
 from reward_model.utils import EarlyStopping
 import wandb
 from datasets import load_dataset
+import numpy as np
 
 WAND_KEY = "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"
 
@@ -91,50 +92,44 @@ def main():
         total_loss = 0
         running_loss = 0.0
         running_acc = 0.0
+        running_mean_margin = 0.0
+        running_chosen_mean = 0.0
+        running_rejected_mean = 0.0
+        
         for i, batch in enumerate(tqdm.tqdm(train_dataloader, desc=f"Epoch {epoch}")):
             c_ids, c_mask = batch["chosen_input_ids"].to("cuda"), batch["chosen_attention_mask"].to("cuda")
             r_ids, r_mask = batch["rejected_input_ids"].to("cuda"), batch["rejected_attention_mask"].to("cuda")
-<<<<<<< HEAD
             with torch.amp.autocast(device_type="cuda", dtype = torch.bfloat16):
-=======
-            with torch.amp.autocast(device_type = "cuda", dtype = torch.bfloat16):
->>>>>>> cce02e2366f5cb414d51110077f2a82b16a76785
                 r_chosen = model(c_ids, c_mask)
                 r_rejected = model(r_ids, r_mask)
                 loss = log_sigmoid_loss(r_chosen, r_rejected)
                 loss = loss / accumulation_steps
                 
-            running_loss += (loss / accumulation_steps).item()
+            running_loss += loss.item()
             running_acc += (r_chosen > r_rejected).float().mean().item() / accumulation_steps
+            running_mean_margin += (r_chosen - r_rejected).mean().item() / accumulation_steps 
+            running_chosen_mean += r_chosen.mean().item() / accumulation_steps
+            running_rejected_mean += r_rejected.mean().item() / accumulation_steps
             loss.backward()
-<<<<<<< HEAD
             if (i+1) % accumulation_steps ==0 : 
-=======
-            if (i+1) % accumulation_steps == 0 : 
->>>>>>> cce02e2366f5cb414d51110077f2a82b16a76785
                 grad_norm = clip_grad_norm_(model.parameters(), max_norm = 1)
                 optimizer.step()
                 lr_scheduler.step()
                 optimizer.zero_grad()
-<<<<<<< HEAD
-                running_acc = 0.0 
-                running_loss = 0.0
                 wandb.log({
             "train/loss": running_loss,
-=======
-                grad_norm_value = grad_norm.item()
-                wandb.log({
-            "train/loss": loss.item(),
->>>>>>> cce02e2366f5cb414d51110077f2a82b16a76785
             "train/lr": lr_scheduler.get_last_lr()[0],
-            "train/margin": (r_chosen - r_rejected).mean().item(),
+            "train/margin": running_mean_margin,
+            "train/chosen_reward_mean" : running_chosen_mean,
+            "train/rejected_reward_mean" : running_rejected_mean,
             "train/grad_norm": grad_norm.item(),
-            "train/accuracy" : running_acc
+            "train/accuracy" : running_acc,
         })
-<<<<<<< HEAD
-=======
-
->>>>>>> cce02e2366f5cb414d51110077f2a82b16a76785
+                running_acc = 0.0 
+                running_loss = 0.0
+                running_rejected_mean = 0.0
+                running_chosen_mean = 0.0
+                running_mean_margin = 0.0
             total_loss += loss.item() * accumulation_steps
         print(f"Epoch {epoch} Average Loss : {total_loss / len(train_dataloader)}")
 
@@ -156,12 +151,20 @@ def main():
                 all_rejected_rewards.extend(r_rejected.cpu().float().tolist())
             all_accs = torch.stack(accuracy_list)
             accuracy = all_accs.mean().item()
+            chosen_reward_mean = np.mean(all_chosen_rewards).mean()
+            rejected_reward_mean = np.mean(all_rejected_rewards).mean()
+            val_margin = np.array(all_chosen_rewards) - np.array(all_rejected_rewards)
+            val_margin_mean = val_margin.mean()
+            val_margin_std = val_margin.std()
             wandb.log({
             "val/accuracy": accuracy,
             "val/best_accuracy": best_acc if accuracy <= best_acc else accuracy,
             "val/chosen_rewards_dist": wandb.Histogram(all_chosen_rewards),
             "val/rejected_rewards_dist": wandb.Histogram(all_rejected_rewards),
-            "val/margin": (r_chosen - r_rejected).mean().item()
+            "val/chosen_reward_mean": chosen_reward_mean,
+            "val/rejected_reward_mean": rejected_reward_mean,
+            "val/margin": val_margin_mean,
+            "val/margin_std" : val_margin_std
         })
 
             if accuracy > best_acc:

@@ -14,21 +14,24 @@ from pathlib import Path
 def parse_args():
     parser = argparse.ArgumentParser(description = "Evaluate the Reward Model")
     parser.add_argument("--reward_model_name", type = str, default = "Qwen/Qwen2.5-1.5B", help = "The Model name")
-    parser.add_argument("--reward_checkpoint_path", type = str, default = "reward_model/results/best/reward_adapter.pth", help = "Save_model_path" )
+    parser.add_argument("--reward_checkpoint_path", type = str, default = "reward_model_v1/reward_adapter.pth", help = "Save_model_path" )
     parser.add_argument("--test_path", type = str, default= "data/test_rm.jsonl", help = "test data path")
     parser.add_argument("--batch_size", type=int, default=8)
     parser.add_argument("--max_length", type=int, default=512)
     parser.add_argument("--output_csv", type = str, default = "reward_model/results/test.csv", help = "results save path")
     parser.add_argument("--save_fig_path", type = str, default = "reward_model/results/fig", help = "Path to save the figure")
+    parser.add_argument("--lora_r", type = int, default= 16)
+    parser.add_argument("--lora_alpha", type = int, default=32)
+    parser.add_argument("--lora_dropout", type = int, default = 0.1)
     return parser.parse_args()
 
 def load_model_and_tokenizer(args):
     tokenizer = AutoTokenizer.from_pretrained(args.reward_model_name)
 
-    model = MyRewardModel(args.reward_model_name)
+    model = MyRewardModel(args.reward_model_name, args.lora_r, args.lora_alpha, args.lora_dropout)
 
     print(f"Loading the checkpoint from {args.reward_checkpoint_path}")
-    checkpoint = torch.load(args.reward_checkpoint_path, map_location = "cpu")
+    checkpoint = torch.load(args.reward_checkpoint_path, map_location = "cuda")
     state_dict = checkpoint.get("model_state_dict", checkpoint)
 
     if any("value_head" in k for k in state_dict.keys()):

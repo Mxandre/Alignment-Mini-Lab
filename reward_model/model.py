@@ -11,10 +11,7 @@ class MyRewardModel(nn.Module):
             load_in_8bit=True
         )
         backbone = AutoModel.from_pretrained(model_name_or_path, quantization_config = bnb_config, dtype = torch.bfloat16, device_map = "cuda")
-<<<<<<< HEAD
-=======
         backbone.gradient_checkpointing_enable()
->>>>>>> cce02e2366f5cb414d51110077f2a82b16a76785
         if hasattr(backbone, "enable_input_require_grads"):
             backbone.enable_input_require_grads()
         peft_config = LoraConfig(
